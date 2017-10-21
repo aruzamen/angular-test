@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from "../material/material.module";
 import { ArticleListComponent } from '../article-list/article-list.component';
 import { ArticleService } from '../shared/services/article.service';
+import { ArticleListItemComponent } from '../article-list-item/article-list-item.component';
 
 @NgModule({
   imports: [
@@ -11,7 +12,7 @@ import { ArticleService } from '../shared/services/article.service';
     MaterialModule,
     HttpClientModule
   ],
-  declarations: [ArticleListComponent],
+  declarations: [ArticleListComponent, ArticleListItemComponent],
   providers: [ArticleService]
 })
 export class ArticleModule { }

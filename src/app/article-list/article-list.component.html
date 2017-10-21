@@ -1,8 +1,8 @@
 <mat-grid-list cols="2" rowHeight="2:1">
-  <mat-grid-tile>
+  <mat-grid-tile *ngFor="let article of articles">
     <mat-card class="example-card">
       <div style="display:inline-block; width: 30%; border: red">
-        <img mat-card-image src="http://material.angular.io/assets/img/examples/shiba2.jpg" style="width: 100%">
+        <img mat-card-image src="./assets/images/image-placeholder.png" style="width: 100%">
       </div>
       <div style="display:inline-block; width: 68%; border: blue">
 
@@ -22,7 +22,4 @@
       </div>
     </mat-card>
   </mat-grid-tile>
-  <mat-grid-tile>Article 2</mat-grid-tile>
-  <mat-grid-tile>Article 3</mat-grid-tile>
-  <mat-grid-tile>Article 4</mat-grid-tile>
 </mat-grid-list>

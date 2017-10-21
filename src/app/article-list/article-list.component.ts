@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ArticleService } from "../shared/services/article.service";
+import { Article } from "../shared/model/article";
 
 @Component({
   selector: 'app-article-list',
@@ -7,6 +8,8 @@ import { ArticleService } from "../shared/services/article.service";
   styleUrls: ['./article-list.component.css']
 })
 export class ArticleListComponent implements OnInit {
+
+  articles: Article[];
 
   constructor(private articleService: ArticleService) {
 
@@ -16,6 +19,7 @@ export class ArticleListComponent implements OnInit {
     this.articleService.getArticles()
       .subscribe(data => {
         console.log(data);
+        this.articles = data;
       });
   }
 
