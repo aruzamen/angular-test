@@ -5,6 +5,7 @@ import {
   MATERIAL_COMPATIBILITY_MODE,
   MatButtonModule,
   MatIconModule,
+  MatCardModule,
   MatToolbarModule
 } from '@angular/material';
 
@@ -13,11 +14,13 @@ import {
     CommonModule,
     MatButtonModule,
     MatIconModule,
+    MatCardModule,
     MatToolbarModule
   ],
   exports: [
     MatButtonModule,
     MatIconModule,
+    MatCardModule,
     MatToolbarModule
   ],
   providers: [

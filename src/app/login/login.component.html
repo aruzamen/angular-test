@@ -1,0 +1,23 @@
+<mat-card style="max-width: 300px">
+  <mat-card-content>
+    <form #loginForm="ngForm">
+      <mat-form-field>
+        <label for="username">Username (*)</label>
+        <input id="username" matInput name="username" [(ngModel)]="login.username">
+      </mat-form-field>
+      <br/>
+      <mat-form-field>
+        <label for="password">Password (*)</label>
+        <input id="password" matInput name="password" [(ngModel)]="login.password">
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions center>
+    <mat-form-field>
+      <button mat-raised-button color="primary">Login</button>
+    </mat-form-field>
+  </mat-card-actions>
+</mat-card>
+<pre>
+{{ login | json}}
+</pre>
