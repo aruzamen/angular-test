@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from "@angular/router";
+import { Router,
+         ActivatedRoute } from "@angular/router";
 import { Article } from '../shared/model/article'
 import { ArticleService } from '../shared/services/article.service'
 
@@ -13,7 +14,8 @@ export class ArticleEditComponent implements OnInit {
   article: Article = {};
 
   constructor(private articleService: ArticleService,
-    private activatedRoute: ActivatedRoute) {
+              private router: Router,
+              private activatedRoute: ActivatedRoute) {
 
   }
 
@@ -31,7 +33,14 @@ export class ArticleEditComponent implements OnInit {
 
   onSave(event: any) {
     console.log(this.article);
+    this.articleService.updateArticle(this.article.id, this.article).subscribe(data=>{
+      console.log('status', data);
+      this.router.navigate(['stories']);
+    });
+  }
 
+  onCancel(event: any) {
+      this.router.navigate(['stories']);
   }
 
 }

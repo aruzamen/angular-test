@@ -17,4 +17,8 @@ export class ArticleService {
   getArticle(articleId: number): Observable<any> {
     return this.httpClient.get(`${ARTICLES_URL}/${articleId}`);
   }
+
+  updateArticle(articleId: number, article: any): Observable<any> {
+    return this.httpClient.put(`${ARTICLES_URL}/${articleId}`, article);
+  }
 }
