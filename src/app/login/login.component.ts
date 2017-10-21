@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from "@angular/router";
 import { Login } from '../shared/model/login';
 
 @Component({
@@ -10,13 +11,14 @@ export class LoginComponent implements OnInit {
 
   login: Login = {};
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
   onLogin(event: any) {
     console.log("login click");
+    this.router.navigate(['stories']);
   }
 
 }
