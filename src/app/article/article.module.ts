@@ -5,6 +5,7 @@ import { MaterialModule } from "../material/material.module";
 import { ArticleListComponent } from '../article-list/article-list.component';
 import { ArticleService } from '../shared/services/article.service';
 import { ArticleListItemComponent } from '../article-list-item/article-list-item.component';
+import { ArticleEditComponent } from '../article-edit/article-edit.component';
 
 @NgModule({
   imports: [
@@ -12,7 +13,7 @@ import { ArticleListItemComponent } from '../article-list-item/article-list-item
     MaterialModule,
     HttpClientModule
   ],
-  declarations: [ArticleListComponent, ArticleListItemComponent],
+  declarations: [ArticleListComponent, ArticleListItemComponent, ArticleEditComponent],
   providers: [ArticleService]
 })
 export class ArticleModule { }
