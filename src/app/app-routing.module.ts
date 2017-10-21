@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from "./login/login.component";
 import { ArticleListComponent } from "./article-list/article-list.component";
+import { ArticleEditComponent } from "./article-edit/article-edit.component";
 
 const routes: Routes = [
   {
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: 'stories',
     component: ArticleListComponent
+  },
+  {
+    path: 'edit/:id',
+    component: ArticleEditComponent
   }
 ];
 

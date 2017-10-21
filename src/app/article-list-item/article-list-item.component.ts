@@ -3,6 +3,7 @@ import { Component,
          Input,
          Output,
          OnInit } from '@angular/core';
+import { Router } from "@angular/router";
 import { Article } from "../shared/model/article";
 import { MatGridTile } from "@angular/material";
 
@@ -20,13 +21,14 @@ export class ArticleListItemComponent implements OnInit {
   @Output()
   select: EventEmitter<any> = new EventEmitter<any>();  
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
   onClick(): void {
     this.select.emit(this.article);
+    this.router.navigate(['edit', this.article.id]);
   }
 
 }
