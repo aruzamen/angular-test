@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from "../material/material.module";
@@ -10,6 +11,7 @@ import { ArticleEditComponent } from '../article-edit/article-edit.component';
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     MaterialModule,
     HttpClientModule
   ],

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from "@angular/router";
+import { Article } from '../shared/model/article'
+import { ArticleService } from '../shared/services/article.service'
 
 @Component({
   selector: 'app-article-edit',
@@ -7,9 +10,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArticleEditComponent implements OnInit {
 
-  constructor() { }
+  article: Article = {};
+
+  constructor(private articleService: ArticleService,
+    private activatedRoute: ActivatedRoute) {
+
+  }
 
   ngOnInit() {
+    this.activatedRoute.params
+      .subscribe(params => {
+        console.log(params.id);
+        this.articleService.getArticle(params.id)
+          .subscribe(data => {
+            this.article = data;
+            this.article['fixedTitle'] = data['title'];
+          });
+      });
+  }
+
+  onSave(event: any) {
+    console.log(this.article);
+
   }
 
 }

@@ -1,3 +1,10 @@
+<h1>Today's top stories</h1>
+<div style="text-align: right;">
+    <button mat-raised-button color="primary" 
+    (click)="onCreate($event)">
+    Add Story
+  </button>
+</div>
 <mat-grid-list cols="2" rowHeight="2:1">
   <app-article-list-item *ngFor="let article of articles"
                                 [article]="article"
