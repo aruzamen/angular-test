@@ -23,20 +23,29 @@ export class ArticleEditComponent implements OnInit {
     this.activatedRoute.params
       .subscribe(params => {
         console.log(params.id);
-        this.articleService.getArticle(params.id)
+        if (params.id) {
+          this.articleService.getArticle(params.id)
           .subscribe(data => {
             this.article = data;
             this.article['fixedTitle'] = data['title'];
           });
+        }
+        
       });
   }
 
   onSave(event: any) {
     console.log(this.article);
-    this.articleService.updateArticle(this.article.id, this.article).subscribe(data=>{
-      console.log('status', data);
-      this.router.navigate(['stories']);
-    });
+    if (this.article.id) {
+      this.articleService.updateArticle(this.article.id, this.article).subscribe(data=>{
+        console.log('status', data);
+        this.router.navigate(['stories']);
+      });
+    } else {
+      this.articleService.createArticle(this.article).subscribe(data=>{
+        this.router.navigate(['stories']);
+      });
+    }
   }
 
   onCancel(event: any) {

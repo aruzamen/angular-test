@@ -19,8 +19,13 @@
       </div>
 
       <button type="submit" class="btn btn-success" [disabled]="articleForm.form.invalid"
-      (click)="onSave($event)">
+      (click)="onSave($event)" *ngIf="article.id">
         Save
+      </button>
+
+      <button type="submit" class="btn btn-success" [disabled]="articleForm.form.invalid"
+      (click)="onSave($event)" *ngIf="!article.id">
+        Create
       </button>
       <button type="submit" class="btn btn-cancel" (click)="onCancel($event)">
         cancel

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ArticleService } from "../shared/services/article.service";
 import { Article } from "../shared/model/article";
 
@@ -11,7 +12,8 @@ export class ArticleListComponent implements OnInit {
 
   articles: Article[];
 
-  constructor(private articleService: ArticleService) {
+  constructor(private articleService: ArticleService,
+              private router: Router) {
 
   }
 
@@ -26,6 +28,10 @@ export class ArticleListComponent implements OnInit {
   onSelect(article: Article) {
     console.log('Selected', article)
 
+  }
+
+  onCreate(event: any) {
+    this.router.navigate(['new']);
   }
 
 }
