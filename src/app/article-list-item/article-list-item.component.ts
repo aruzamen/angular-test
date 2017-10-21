@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,
+         Input,
+         OnInit } from '@angular/core';
+import { Article } from "../shared/model/article";
+import { MatGridTile } from "@angular/material";
 
 @Component({
   selector: 'app-article-list-item',
@@ -6,6 +10,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./article-list-item.component.css']
 })
 export class ArticleListItemComponent implements OnInit {
+
+  @Input()
+  article: Article;
 
   constructor() { }
 
