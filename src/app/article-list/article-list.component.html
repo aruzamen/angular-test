@@ -1,6 +1,7 @@
 <mat-grid-list cols="2" rowHeight="2:1">
   <app-article-list-item *ngFor="let article of articles"
-                                [article]="article">
+                                [article]="article"
+                                (select)="onSelect($event)">
 
   </app-article-list-item>
 </mat-grid-list>

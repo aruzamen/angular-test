@@ -1,5 +1,7 @@
 import { Component,
+         EventEmitter,
          Input,
+         Output,
          OnInit } from '@angular/core';
 import { Article } from "../shared/model/article";
 import { MatGridTile } from "@angular/material";
@@ -14,9 +16,17 @@ export class ArticleListItemComponent implements OnInit {
   @Input()
   article: Article;
 
+  // Output event
+  @Output()
+  select: EventEmitter<any> = new EventEmitter<any>();  
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onClick(): void {
+    this.select.emit(this.article);
   }
 
 }

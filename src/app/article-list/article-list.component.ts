@@ -23,4 +23,9 @@ export class ArticleListComponent implements OnInit {
       });
   }
 
+  onSelect(article: Article) {
+    console.log('Selected', article)
+
+  }
+
 }
